@@ -9,6 +9,7 @@ import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
+import { Footer } from './components/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,9 +23,40 @@ const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk'
 })
+// Metadata configuration
 export const metadata: Metadata = {
-  title: 'Next Temp',
-  description: 'create next app By Yahya Parvar!'
+  title: 'Hogan Winston Boies LLP - Global Legal Experts',
+  description:
+    'Hogan Winston Boies LLP specializes in cross-country deals, litigation, and high-value financial transactions, offering world-class legal services globally.',
+  keywords: [
+    'law firm',
+    'global legal services',
+    'litigation experts',
+    'financial transactions',
+    'cross-border deals',
+    'Hogan Winston Boies LLP'
+  ].join(', '),
+  openGraph: {
+    title: 'Hogan Winston Boies LLP - Global Legal Experts',
+    description:
+      'Specialists in cross-country deals, litigation, and financial transactions.',
+    url: 'https://www.hoganwinstonboies.com',
+    siteName: 'Hogan Winston Boies LLP',
+    images: [
+      {
+        url: '/og-image.jpg', // Replace with your actual OpenGraph image URL
+        width: 1200,
+        height: 630,
+        alt: 'Hogan Winston Boies LLP logo'
+      }
+    ],
+    type: 'website'
+  },
+  viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
+  robots: {
+    index: true,
+    follow: true
+  }
 }
 
 export default function RootLayout({
@@ -74,7 +106,8 @@ export default function RootLayout({
               showSpinner={false}
             />
             <Header locale={locale} />
-            <main className='mx-auto max-w-screen-2xl'>{children}</main>
+            <main className='max-w-screen-3xl mx-auto'>{children}</main>
+            <Footer locale={locale} />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
