@@ -88,12 +88,12 @@ export const Header: FC<Props> = ({ locale }) => {
           {/* Language Switcher and Contact Us */}
           <div className='flex items-center gap-6'>
             {/* <LangSwitcher /> */}
-            <Link
-              href={`/${locale}/contact`}
+            <a
+              href='mailto:legal@hoganwinstonboies.com'
               className='hidden rounded-full bg-blue-800 px-6 py-2 text-sm font-medium text-white hover:bg-blue-900 lg:block'
             >
               {t('contact_us')}
-            </Link>
+            </a>
           </div>
         </div>
       </div>
